@@ -10,27 +10,35 @@ namespace DAN_XLVII_MilosPeric
 {
     internal class Vehicle
     {
-        public readonly string[] moveDirection = { "North", "South" };
-        public Random random = new Random();
+        private readonly string[] moveDirection = { "North", "South" };
+        private Random random = new Random();
         private readonly object objLock = new object();
-        public delegate void Del(string message);
-        public Del messageHandler = DelegateMethod;
-        List<string> orderList = new List<string>();
-        Semaphore semaphore = new Semaphore(1, 15);
-        Stopwatch stwch = new Stopwatch();
-        int numberOfIterations;
-        int counter = 0;
+        private delegate void Del(string message);
+        private Del messageHandler = DelegateMethod;
+        private List<string> orderList = new List<string>();
+        private Semaphore semaphore = new Semaphore(1, 15);
+        private Stopwatch stwch = new Stopwatch();
+        private int numberOfIterations;
+        private int counter = 0;
         
-
+        /// <summary>
+        /// Designated method for delegate use.
+        /// In this class all messages are written by assigning this method to delegate Del
+        /// </summary>
+        /// <param name="message">Message to print using Console.Writeline().</param>
         public static void DelegateMethod(string message)
         {
             Console.WriteLine(message);
         }
 
+        /// <summary>
+        /// Starts threads in for loop, using random number of iterations 1-15, each thread is assigned random name North or South.
+        /// Thread start order is saved in orderList.
+        /// </summary>
         public void StartVehicle()
         {
             numberOfIterations = random.Next(1, 16);
-            Console.WriteLine($"Total number of vehicles: {numberOfIterations}");
+            messageHandler($"Total number of vehicles: {numberOfIterations}");
             for (int i = 0; i < numberOfIterations; i++)
             {
                 Thread tTruck = new Thread(new ParameterizedThreadStart(Worker));
@@ -41,6 +49,10 @@ namespace DAN_XLVII_MilosPeric
             orderList.Add(" ");
         }
 
+        /// <summary>
+        /// Method is used by threads created in for loop to print number of vehicle and direction moving.
+        /// </summary>
+        /// <param name="obj">Number of thread starting the method</param>
         public void Worker(object obj)
         {        
             lock (objLock)
@@ -51,7 +63,12 @@ namespace DAN_XLVII_MilosPeric
             stwch.Start();
             CrossBridge((int)obj);                           
         }
-
+        /// <summary>
+        /// After all threads start they call this method. Semaphore is used to synchronize thread execution. 
+        /// If direction is same next treads enters critical section instantly, otherwise there is 500ms delay,
+        /// to represent change of direction of wehicles crossing the bridge.
+        /// </summary>
+        /// <param name="vehichleNumber">Number of thread entering this method.</param>
         public void CrossBridge(int vehichleNumber)
         {
             semaphore.WaitOne();
@@ -69,7 +86,7 @@ namespace DAN_XLVII_MilosPeric
             }
             if (counter == numberOfIterations)
             {
-                Console.WriteLine("Program execution time: " + stwch.Elapsed.TotalSeconds + " seconds.");
+                messageHandler("Program execution time: " + stwch.Elapsed.TotalSeconds + " seconds.");
             }
         }
     }
