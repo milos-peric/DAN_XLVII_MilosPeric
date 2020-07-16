@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAN_XLVII_MilosPeric", "DAN_XLVII_MilosPeric\DAN_XLVII_MilosPeric.csproj", "{6C2A5EB9-2A55-475D-B074-989A7D52DF38}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAN_XLVII_MilosPeric", "DAN_XLVII_MilosPeric\DAN_XLVII_MilosPeric.csproj", "{84441395-B189-434F-86DD-22152B9A580B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6C2A5EB9-2A55-475D-B074-989A7D52DF38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C2A5EB9-2A55-475D-B074-989A7D52DF38}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C2A5EB9-2A55-475D-B074-989A7D52DF38}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C2A5EB9-2A55-475D-B074-989A7D52DF38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84441395-B189-434F-86DD-22152B9A580B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84441395-B189-434F-86DD-22152B9A580B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84441395-B189-434F-86DD-22152B9A580B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84441395-B189-434F-86DD-22152B9A580B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C92A6702-A6C0-49F5-9217-900AD8E74055}
+		SolutionGuid = {99087827-ADAE-4247-B107-FFFA7DA3E384}
 	EndGlobalSection
 EndGlobal

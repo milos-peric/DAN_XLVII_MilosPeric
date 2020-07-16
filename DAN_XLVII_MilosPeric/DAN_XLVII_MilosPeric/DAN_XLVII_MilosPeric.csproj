@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6C2A5EB9-2A55-475D-B074-989A7D52DF38}</ProjectGuid>
+    <ProjectGuid>{84441395-B189-434F-86DD-22152B9A580B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>DAN_XLVII_MilosPeric</RootNamespace>
     <AssemblyName>DAN_XLVII_MilosPeric</AssemblyName>
@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vehicle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
